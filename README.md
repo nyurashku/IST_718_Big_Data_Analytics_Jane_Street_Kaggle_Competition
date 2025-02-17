@@ -29,3 +29,9 @@ The data used for this project is from a Jane Street hosted Kaggle competition w
 All data resources have been downloaded and added to this github too in case the data will not longer be available after the competition ends. 
 
 ---
+
+## Authors
+
+Keli Davis
+Benjamin Tisinger
+Nikolay Yurashku
