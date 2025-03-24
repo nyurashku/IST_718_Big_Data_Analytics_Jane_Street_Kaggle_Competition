@@ -35,6 +35,34 @@ All data resources have been downloaded and added to this github too in case the
 ---
 ## Exploratory Data Analysis
 
+For data cleaning and exploration, a 5% randomly sampled dataset was extracted from the full dataset of over 47 million rows. This was done to reduce the computation time required for cleaning, exploration, and modeling. This methodology assumes the randomly sampled data is representative of the full dataset. The original dataset contains 9 responders including the target, responder_6. All responders except for the target were dropped from the sampled dataset. Next, the data was checked for categorical data and missing data. If the missing data was more than 10% of the individual feature, the missing rows were removed. If the missing data was less than 10% of the feature, the missing values were imputed with the median value. The low-variance features were then removed. After cleaning was completed, data exploration began. To better understand the relationship between features and the target variable, a correlation analysis was conducted on the 5% sampled dataset. The graph below highlights the top 15 features with the strongest correlations to the target. Feature_06 had the highest correlation at -0.046, followed by Feature_04 at -0.032—both of which are negatively correlated with responder_6. However, despite being the strongest relationships, these correlation values are generally weak. This indicates that no single feature has a dominant impact on the target variable.
+
+Exhibit 1.1
+
+![image](https://github.com/user-attachments/assets/aaa0f5af-54d7-425f-a196-a920542e2df9)
+
+
+A feature importance analysis was also conducted to identify the most influential features in predicting the target variable. The graph below shows the top 20 most important features, ranked by the most predictive. Feature_06 is the most significant predictor. Feature_04 ranked second, though its predictive influence is considerably lower than Feature_06. 
+
+Exhibit 1.2
+
+![image](https://github.com/user-attachments/assets/fcbeabcc-d15c-412e-a29b-a09cfa566146)
+
+
+Exhibit 1.3
+
+![image](https://github.com/user-attachments/assets/766db2af-8240-4289-840f-dabc79d5c6be)
+
+
+The figure above illustrates the distribution of the top five most important features. It indicates the data for each feature follows a normal distribution pattern.
+Further Analysis of Dataset
+In an effort to understand the dataset’s underlying meaning, the team hypothesized that the feature values might represent a rate of return. Jane Street included columns for date and time; however, both were anonymized and reduced to simple integer values indicating a progression of time.
+As shown in Exhibit 1.4, we can plot any symbol in the dataset against this anonymized time index to produce a time series. The resulting plot displays patterns reminiscent of a stock price or a volatility metric, reinforcing the idea that these feature values could indeed be related to returns or price movements.
+
+Exhibit 1.4:
+
+![image](https://github.com/user-attachments/assets/2a003dc5-17a9-4fc6-969d-7faeb40e7dea)
+
 ---
 
 ## Models & Methodology
